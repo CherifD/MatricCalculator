@@ -1,7 +1,7 @@
 package com.cherifcodes.matrixArtithmetics;
 
 /**
- * Contains method for performing basic vector and matrix calculations
+ * Contains methods for performing basic vector and matrix calculations
  */
 public class MatrixCalculator {
 
@@ -18,4 +18,25 @@ public class MatrixCalculator {
                 vector1.length > 0 &&
                 vector1.length == vector2.length);
     }
+
+    /**
+     * Gets the column specified with the given columnIndex from the give matrix
+     * @param matrix the given 2D matrix
+     * @param columnIndex the specified column index
+     * @return an array containing the values of the specified column
+     */
+    public static double [] getMatrixColumn(double [][] matrix, int columnIndex) {
+
+        //Ensure that the columnIndex and the matrix are valid
+        if (columnIndex < 0 || matrix == null || matrix.length < 1 || columnIndex >= matrix[0].length)
+            throw new IllegalArgumentException("Invalid arguments");
+
+        double [] column = new double[matrix.length];
+
+        for (int i = 0; i < column.length; i++) {
+            column[i] = matrix[i][columnIndex];
+        }
+        return column;
+    }
+
 }
