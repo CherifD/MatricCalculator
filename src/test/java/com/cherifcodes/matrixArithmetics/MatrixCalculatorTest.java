@@ -19,15 +19,6 @@ public class MatrixCalculatorTest {
             {12, 23, 5, 0, 8},
             {2, 9, 11, 10, 3}};
 
-    @Test(expected = Exception.class)
-    public void testGetMatrixColumn_greaterThanMaxIndex() {
-        MatrixCalculator matrixCalculator = new MatrixCalculator();
-        int desiredColumn = 44;
-        double [] expectedColumn = {4, 23, 9};
-        double [] actualColumn = matrixCalculator.getMatrixColumn(matrix, desiredColumn);
-        assertTrue(Arrays.equals(expectedColumn, actualColumn));
-    }
-
     @Test
     public void testAreTwoVectorsValid(){
         //Test two null vectors
