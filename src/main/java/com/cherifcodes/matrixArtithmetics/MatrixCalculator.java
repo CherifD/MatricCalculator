@@ -38,4 +38,27 @@ public class MatrixCalculator {
         }
         return column;
     }
+
+
+    /**
+     * Calculates the sum of two specified vectors
+     * @param vector1 the first specified vector
+     * @param vector2 the second specified vector
+     * @return a vector representing the sum of the two specified vectors
+     * @throws IllegalArgumentException if one or more vectors are invalid based on the
+     *         areTwoVectorsValid() method.
+     */
+    public double[] addTwoVectors(double [] vector1, double [] vector2) {
+
+        //Ensure that the two vectors have equal length
+        if (!areTwoVectorsValid(vector1, vector2))
+            throw new IllegalArgumentException("Invalid vectors.");
+
+        double [] sum = new double[vector1.length];
+
+        for (int i = 0; i < sum.length; i++) {
+            sum[i] = vector1[i] + vector2[i];
+        }
+        return sum;
+    }
 }
