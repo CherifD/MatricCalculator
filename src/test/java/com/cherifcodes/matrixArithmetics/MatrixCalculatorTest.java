@@ -29,6 +29,14 @@ public class MatrixCalculatorTest {
     }
 
     @Test
+    public void testGetMatrixColumn_validIndex(){
+        int desiredColumn = 1;
+        double [] expectedColumn = {5, 23, 9};
+        double [] actualColumn = MatrixCalculator.getMatrixColumn(matrix, desiredColumn);
+        assertTrue(Arrays.equals(expectedColumn, actualColumn));
+    }
+
+    @Test
     public void testAreTwoVectorsValid(){
         //Test two null vectors
         double [] v1 = null;

@@ -38,5 +38,4 @@ public class MatrixCalculator {
         }
         return column;
     }
-
 }
