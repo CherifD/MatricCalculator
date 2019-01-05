@@ -20,7 +20,7 @@ public class MatrixCalculator {
     }
 
     /**
-     * Gets the column specified with the given columnIndex from the give matrix
+     * Gets the column specified with the given columnIndex from the given matrix
      * @param matrix the given 2D matrix
      * @param columnIndex the specified column index
      * @return an array containing the values of the specified column
@@ -61,4 +61,27 @@ public class MatrixCalculator {
         }
         return sum;
     }
+
+
+    /**
+     * Calculates the dot product of two specified vectors
+     * @param vector1 the first specified vector
+     * @param vector2 the second specified vector
+     * @return the dot product of the vectors
+     * @throws IllegalArgumentException if the vectors are invalid based on the
+     * areTwoVectorsValid(double[], double[]) method
+     */
+    public double getDotProductOfTwoVectors(double [] vector1, double [] vector2) {
+        //Ensure that the two vectors have equal length
+        if (!areTwoVectorsValid(vector1, vector2))
+            throw new IllegalArgumentException("Invalid vectors.");
+
+        double result = 0;
+
+        for (int i = 0; i < vector1.length; i++) {
+            result += vector1[i] * vector2[i];
+        }
+        return result;
+    }
+
 }
